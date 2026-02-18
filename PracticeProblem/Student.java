@@ -1,31 +1,25 @@
-// Step 1: Create class Student
 class Student {
-    // Step 2: Instance variables
-    int id;
-    String name;
-    int age;
+int id;
+String name;
 
-    // Step 3: Method to display details
-    void displayDetails() {
-		String status="active";
-        System.out.println("Student ID: " + id);
-        System.out.println("Student Name: " + name);
-        System.out.println("Student Age: " + age);
-    }
+Student() {
+this(101, "Rishikesh"); // calls parameterized constructor
+System.out.println("Default Constructor Called");
 }
 
-// Step 4: Object creation + Step 5: Method call
-public class Main {
-    public static void main(String[] args) {
-        // Create object of Student
-        Student s1 = new Student();
+// Parameterized constructor
+Student(int id, String name) {
+this.id = id;
+this.name = name;
+System.out.println("Parameterized Constructor Called");
+}
 
-        // Assign values
-        s1.id = 101;
-        s1.name = "Anushka";
-        s1.age = 20;
+void display() {
+System.out.println(id + " " + name);
+}
 
-        // Call display method
-        s1.displayDetails();
-    }
+public static void main(String[] args) {
+Student s = new Student();
+s.display();
+}
 }
